@@ -1,0 +1,527 @@
+CSS: cascading style sheet
+==>css is used for styling the webpage
+==>beautify the user interface.
+==>css is having predefined properties like font related styles,aligning the element at particular positions.
+
+types of css
+
+1)INLINE CSS
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>inline css</title>
+  </head>
+  <body>
+    <h2>demo on inline styles</h2>
+	<h1 style="color:red;">Happy Holi</h1>
+	<h1 style="color:blue;">Colors of Life</h1>
+	<input type="text" style="color:green;">
+
+  </body>  
+</html>
+		
+====================================================
+2)INTERNAL CSS
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>internal css</title>
+	<style>
+	  h2{
+	    color:red;
+	  }
+	  img{
+	    width:100px;
+		height:100px;
+	  }
+	</style>
+  </head>
+  <body>
+    <h2>demo on internal styles</h2>
+	<h2>HTML</h2>
+	<h2>CSS</h2>	
+	<h2>Javascript</h2>	
+	<img src="baby.jpg">
+	<img src="login.jpg">
+	
+  </body>  
+</html>
+======================================================
+3)EXTERNAL CSS
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<style>
+	  h3{ 
+		text-align:center;
+	  }	  
+	</style>	
+	<link rel="stylesheet" href="mystyles.css">
+  </head>
+  <body>  
+	<h2>demo on 3 styles</h2>
+	<h3 style="background:yellow;">Holi is a popular and significant Hindu festival celebrated as the Festival of Colours, Love, and Spring.</h3>
+  <body>  
+</html>
+===========================================================
+=============================================================
+ SELECTORS
+syntax:
+//we have to place css code in <style> tag
+ <style>
+selector {
+property:value;
+property:value;
+
+}
+</style>
+
+
+==>selector will represent html element,to which element(paragraph,form,input,table) we have to apply style is mentioned by selector
+==>property name is predefined in css
+==>it is always recommended to place style tag in head section
+==>when webpage is loaded on the browser ,first it will load entire head section and then body section.
+before body gets executed ,styling/makeup part get loaded .And when body get loaded,directly styles can be apply directly.
+
+=======================================================================
+TYPES OF SELCTORS
+
+1)TAG SELECTOR::name of the tag/element will become the selector.
+with tag selector each and every tag with matching name will get same style.
+
+limitations:
+//we cant give different style to every tag with same name.
+
+<html>
+<head>
+<style>
+p{
+	color:blue;	
+   }
+</style>	
+</head>
+<body>
+<p>this is dummy para</p>
+<p>hello world</p>
+<p>this is last para</p>
+</body>
+</html>
+
+==================================================
+
+
+
+==================================================
+2)Id selector:
+==>when we want to style each element differently or when we want to identify each element uniquely ,we will assign unique id to each and every element.
+==>we cant give same id to multiple elements.
+Each element can get an ID,and in selector id will be mentioned with prefix #
+#id-value{
+
+}
+
+
+<html>
+<head>
+<style>
+#p1{  // we are applying style on to that element  whose id is p1
+	color:blue;	
+   }
+</style>	
+</head>
+<body>
+<p id="p1">this is dummy para</p>
+<p id="p2">hello world</p>
+<p id="p3">this is last para</p>
+</body>
+</html>
+
+==============================================================================
+3) class selector:
+suppose we are having these 3 paragraph element and 2 span and 2 labels
+requirement is  last 2 para,1st span and on 2nd label ,we have to apply common css .
+
+1st solution is give different id to every tag with same style but repetition will occur
+2nd solution is class  selector
+==>when multiple element is der to which we have to apply same styles then we use class selector
+==>when multiple elements has to be identified commonly then class selector will be applied.
+
+
+<html>
+<head>
+<style>
+.c1{
+
+color:blue;
+}
+</style>	
+</head>
+<body>
+<p >this is dummy para</p>
+<p class="c1">hello world</p>
+<p class="c1">this is last para</p>
+<span class="c1">span1</span>
+<span>span2</span>
+<label>label1</label>
+<label class="c1">label2</label>
+</body>
+</html>
+
+
+=========================================================================
+
+4)universal selector:
+it will select all the elements on web page to which we have to apply common css.
+==>req is through out application we want to apply same font to each and every element . for that use universal selector
+
+<html>
+<head>
+<style>
+*{
+
+color:red;
+}
+</style>	
+</head>
+<body>
+<p >this is dummy para</p>
+<p >hello world</p>
+<p >this is last para</p>
+<span>span1</span>
+<span>span2</span>
+<label>label1</label>
+<label>label2</label>
+</body>
+</html>
+
+
+===================================================================================
+==> suppose we have to give same styling to 2 or more elements we can mix id,tag or class selector
+use case: when multiple selectors need to get same style. 
+selector1,selector2,selector3{
+}
+==>we can use tag selector or id selector or class selector.we need to assign multiple elements/multiple selector with same css.in that case use above syntax.
+
+
+
+<html>
+<head>
+<style>
+span,label,#c1{
+
+color:red;
+}
+</style>	
+</head>
+<body>
+<p class="c2">this is dummy para</p>
+<p id="c1">hello world</p>
+<p >this is last para</p>
+<span>span1</span>
+<span>span2</span>
+<label>label1</label>
+<label>label2</label>
+</body>
+</html>
+
+=======================================================================
+
+we can also write selector 1 as id,selector 2 as class, selector 3 as tag  ex:
+
+<html>
+<head>
+<style>
+#c1,.c2{
+
+color:red;
+}
+</style>	
+</head>
+<body>
+<p class="c2">this is dummy para</p>
+<p id="c1">hello world</p>
+<p >this is last para</p>
+<span>span1</span>
+<span>span2</span>
+<label>label1</label>
+<label>label2</label>
+</body>
+</html>
+
+================================================================================
+preferences will be
+id
+class
+tag
+universal
+
+
+
+FAQ:what is the output
+#p1{
+	color:red
+	}    
+.c1{
+color:blue
+     }
+p{
+color:green
+  }
+
+<p id="p1" class="c1">  or <p  class="c1" id="p1">hello </p>
+ // sequence will not going to matter, prority will be given to id
+
+ output: id selector will override. first preference will be given to id. the css which u apply to id,that style will be apply.red color will be apply
+==========================================================================
+PREDEFINED CSS PROPERTIES
+
+<html>
+<head>
+<style>
+p{
+color:white;
+font-size:30px; //to increase and decrease the font size
+font-weight:bold ;  //we can assign slight boldness to the font, thickness of the font will increased .. minimum value is 100
+font-style: italic; // default is normal
+font-family:'segoe ui light';
+background-color:blue;   
+backround:url("images/bg.jpg")  ; // we can assign image as background
+padding-top:20px;
+padding-bottom:20px;
+padding:20px; //
+
+}
+</style>	
+</head>
+<body>
+<p >this is dummy para</p>
+</body>
+<html>
+
+//to manage internal spaces of any container/element can be done by using padding(internal space)
+padding means the space that are present inside of that element
+padding-top|bottom|right|left
+
+padding:20px ; on each and every side will get 20 px padding
+padding: 20 px 40 px; t-20 r-40 b-20 l-40
+padding 20px 40px 30px 50px T R B L
+==========================================================
+
+To manage external spaces of any element/container use margin
+margin-top; right botton,left
+
+<html></html>
+<head>
+<style>
+#para{
+color:white;
+background-color: blue;
+margin-top: 50px;
+margin-left: 50px;
+}
+</style>	
+</head>
+<body>
+<p>this is first para</p>
+<p id="para">this is dummy para</p>
+</body>
+<html>
+
+margin will provide space outside of the element
+padding will provide space inside of the element
+=================================================================
+
+LOGIN PAGE 
+
+
+<html>
+<head>
+<style>
+*{
+font-family:'Segoe Ui Light';
+}
+body{
+
+background:linear-gradient(#7E57C2,#EC407A);
+}
+#login-box{
+width:450px;
+height:450px;
+background:white;
+margin:120px auto;
+text-align:center;
+border-radius:30px;
+box-shadow:12px 12px 15px #1976D2;
+}
+h1{
+padding-top:35px;
+}
+input{
+width:65%;
+margin-bottom:25px;
+padding-top:10px;
+padding-bottom:10px; 
+.border-width:0;
+outline-width:0;
+border-bottom-width:2px;
+border-bottom-color:#1976D2;
+border-bottom-style:solid;
+border-radius:30px;
+
+}
+button{
+width:40%;
+border:0;
+padding-top:10px;
+padding-bottom:10px;
+background:#1976D2;
+color:white;
+font-size:15px;
+
+}
+button:hover{
+color:#1976D2;
+background:white;
+border-width:1px;
+border-style:solid;
+border-color:#1976D2;
+
+
+}
+</style>
+</head>
+<body>
+<div id="login-box">
+	<h1 >LOGIN</h1>
+	<form>
+		<input type="text" placeholder="enter username">
+		<input type="password" placeholder="enter password">
+		<button type="submit">Login</button>
+	</form>
+<p>Need Account? <a href="#">SIGN UP </a></p>
+</div>
+</body>
+</html>
+
+===============================================
+
+ways to represent color
+1)by name
+2)hexadecimal code #6 characters
+3)rgb(0-255,0-255,0-255) any color is made with the combination of rgb
+shade of red , shade of green, shade of blue color
+range is 0-255
+
+colors picker
+https://materialui.co/colors 
+
+================================================
+EXPLANATION OF CSS PROPERTIES
+
+1)margin:100px uuto
+to place any container in center ,give magin left and margin right as equal
+but problem size screen is different for every device , we cannot calculate margin size in that case so let browser calculate the margin size according to screen size to make the container appear in center.
+
+margin:100 px auto; //100 applies on top and bottom . left and right ,it will calculate automatically. open in any screen size.it will automatically adjust to center.
+//we cant use auto vertically because it can be scroll infinitely vertical.
+
+
+
+2)border-width:0;
+outline-width:0;
+if i make border-width as 0 no border will appear but as soon as we click on it border will again appear so make outline width as 0
+=======================================================================================
+
+3)box-shadow : horizontal, vertical, blur, color;
+
+======================================================
+4)we can mix multiple 2 color to background
+linear-gradient(1 color,2 color);
+=====================================================================================
+DAY2
+HTML FORMS
+==>u want to accept input from user,we have to use form
+==<<form> is not use to display the form. <form> tag will help us to submit the form.
+==>we have to mentioned two thing using form tag i.e if we want to submit data on server means we re sending request to the server. and with request 2 things will always associate request url ->to which url we should submit our request and request method.
+by default req method is GET.
+
+<form action="" method="">
+//as soon as user hit the submit button,onto which url we need to send the request inorder to submit the form,which is given by action attribute.
+note:in the absence of any of the method then by default it will be considered as GET
+
+===============================================
+<html>
+<head>
+</head>
+<body> 
+<form action="http://www.google.com">
+Name: <input type="text" placeholder="enter name">  
+<label> Name:: </label><input type="text" placeholder="enter name">  
+<br><br>
+<label>Email::</label><input type="email" placeholder="enter email">
+
+<label>phone::</label><input type="text" placeholder="enter phoneno">
+<br><br>
+<label>DOB::</label><input type="date">  
+<br><br>
+<label>Time::</label><input type="time" >
+<br><br>
+<label>profile pic::</label><input type="file" > 
+<br>
+<label>Graduation::</label> 
+<select>
+<option value="">--select graduation-------</option>
+<option value="101" selected>B.TECH</option> 
+<option value="102">M.TECH</option>
+</select>
+<br><br>
+
+<label>select gender::</label>
+<input type="radio" name="gender" value="male" checked><span>male</span>
+<input type="radio" name="gender" value="female"><span> female</span> 
+
+<label>select hobbies</label>
+<input type="checkbox" value="1"> <span>dancing</span>
+<input type="checkbox" value="2"> <span>music</span>
+<input type="checkbox" value="3"> <span>singing</span>
+<br>
+
+<label>Address</label> <textarea placeholder="enter address"></textarea>
+<br>
+<label>password::</label><input type="password" placeholder="enter password">
+<br>
+<input type="submit" value="click" >
+
+
+<html>
+=========================================================
+//three types of button
+1submit: functionalities is already defined. for submitting the form. whenever the user click on submit button, action attribute will come into picture. form will be submitted to action.request will be send to that url along with form data.
+2 reset:functionalities is already defined
+3 plain button:need to write custom logic.whenever we click on button. what functionalities we need for button,we should write
+
+2 tags to create button
+1)input
+2)button
+
+<br>
+<input type="submit" value="sign up"> // value is caption of the button
+<input type=reset" value="clear">
+<input type="button" >
+<input type="button" value="click" onClick="alert('my custom button')">
+
+<br>
+<button type="submit" >sign up</button> 
+<button type=reset">clear</button>
+<button type="button" onClick="alert('my custom button')">Click</button>
+
+
+</form>
+</body>
+</html>
+=========================================
+
+
